@@ -45,6 +45,8 @@ test("Login to app",async({browser}) => {
 //check using assertion------admin home page should displayed
     await expect(page2).toHaveURL("http://49.249.28.218:8081/AppServer/Sales_And_Inventory_System/pages/index.php")
     console.log("close");
+    console.log();
+    
     
     
 
