@@ -1,6 +1,6 @@
 
 import { test, expect } from '@playwright/test';
-import excel from "exceljs"
+import ExcelJS from "exceljs"
 import fs from "fs"
 import Login from "../POM/Admin/login.page.js"
 import Admin from '../POM/Admin/admin.page.js';
@@ -49,7 +49,7 @@ test('@smoke customer', async () => {
 
 test("@regression add customer", async() => {
   //read data from customer excel
-    let book=new excel.Workbook()
+    let book=new ExcelJS.Workbook()
     await book.xlsx.readFile("C:/Users/sgarg/OneDrive/Desktop/Sales_Inventory_Automation_Script/DDT/customerData.xlsx")
     let sheet=book.getWorksheet("Sheet1")
     let firstName=sheet.getRow(2).getCell(1).toString()
@@ -81,7 +81,7 @@ test("@smoke employee",async() => {
 
 test("@regression add employee", async() => {
   //read data from excel
-    let book=new excel.Workbook()
+    let book=new ExcelJS.Workbook()
    await book.xlsx.readFile("C:/Users/sgarg/OneDrive/Desktop/Sales_Inventory_Automation_Script/DDT/customerData.xlsx")
     let sheet=book.getWorksheet("empData")
     let firstName=sheet.getRow(2).getCell(1).toString()
